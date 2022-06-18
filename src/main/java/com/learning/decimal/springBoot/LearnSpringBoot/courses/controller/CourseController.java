@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.learning.decimal.springBoot.LearnSpringBoot.courses.bean.Course1;
@@ -41,8 +42,8 @@ public class CourseController {
 	
 	//@CrossOrigin(origins = "http://localhost:4200")
 	//// http://localhost:8080/courses/1
-	@GetMapping("/courses/{id}")
-	public Course1 getCourseDetails(@PathVariable long id) {
+	@GetMapping("/Getcourses")
+	public Course1 getCourseDetails(@RequestParam("id") long id) {
 		
 		Optional<Course1> course = repository.findById(id);
 		
